@@ -1,0 +1,84 @@
+@media (max-width: 1180px) {
+
+    main .bubble-img {
+        display: none;
+    }
+
+    .brave-me{
+        width: calc(100% - 48px);
+    }
+    
+    .inf-me {
+        width: calc(100% - 48px);
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* Scrol bar personanization */
+
+    .menu::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    .menu::-webkit-scrollbar-track {
+        background: var(--cor4);
+    }
+    
+    .menu::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        border-radius: 24px;
+        border: 1px double var(--cor0);
+    }
+
+    /* Scrol bar personanization */
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 0px;
+        position: absolute;
+        background-color: var(--cor4);
+        top: 60px;
+        right: 0px;
+        margin: 0px;
+        z-index: 1000;
+        transition: .4s ease-in;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    .menu-responcive {
+        display: flex;
+    }
+
+    .menu-nav.open .menu {
+        display: flex;
+        height: calc(100vh - 60px);
+        flex-direction: column;
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    .menu-nav.open .menu a {
+        padding: 8px 24px 24px 24px;
+    }
+
+    .menu-nav.open .menu-responcive .line1{
+        transform: rotate(135deg);
+        top: 8px;
+    }
+
+    .menu-nav.open .menu-responcive .line2{
+        display: none;
+    }
+
+    .menu-nav.open .menu-responcive .line3{
+        transform: rotate(-135deg);
+    }
+
+    .brave-me{
+        width: 447px;
+    }
+}

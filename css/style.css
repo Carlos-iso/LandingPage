@@ -11,6 +11,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    transition: .3s cubic-bezier(1, 0, 0, 1);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Scrol bar personanization */
@@ -48,19 +54,20 @@ header {
     display: flex;
     align-items: center;
     margin: 0px 24px;
+    gap: 12px;
 }
 
 .menu a {
-    text-decoration: none;
+    display: flex;
+    flex-direction: row;
     color: var(--cor0);
     padding: 8px;
 }
 
 .menu a:hover {
+    scale: 1.15 ;
     font-weight: bold;
-    border: var(--cor0) 3px solid;
-    border-radius: 24px;
-    transition: .3s;
+    cursor: pointer;
 }
 
 .menu img {
@@ -69,25 +76,23 @@ header {
 
 .menu-responcive {
     display: none;
-    width: 30px;
-    height: 47px;
+    width: auto;
+    height: auto;
     flex-direction: column;
     background-color: transparent;
     border: none;
-    margin: 8px 24px;
+    padding: 8px 24px;
 }
 
 .menu-responcive:hover {
     cursor: pointer;
 }
 
-.menu-responcive div{
+.menu-responcive img{
     width: 100%;
     height: 4px;
     margin: 4px 0px 0px 0px;
-    background: url("/src/icons/line.svg") no-repeat center center;
-    background-size: cover;
-    transition: .3s;
+    transition: .3s linear;
     position: relative;
 }
 
@@ -98,21 +103,26 @@ header {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 150vh;
-    height: calc(100vh - 68px);
+    height: calc(100% - 68px);
     background-color: var(--cor3);
 }
 
+main .bubble-img {
+    position: fixed;
+    right: 0px;
+    top: 88px;
+}
+
 .brave-me{
-    width: 402px;
+    width: 70%;
     display: flex;
     align-items: center;
     border: var(--cor0) 3px double;
     border-radius: 24px;
-    position: relative;
-    top: 8px;
-    left: 24px;
+    margin: 24px;
     color: var(--cor0);
 }
 
@@ -121,82 +131,51 @@ main {
     margin: 8px;
 }
 
+.inf-me {
+    width: 75%;
+    margin: 0px 0px 24px 0px;
+}
+
 .inf-me h1{
-    margin: 24px 0px 8px 24px;
+    margin: 0px 0px 8px 24px;
     color: var(--cor0);
 }
 
 .inf-me p{
+    font-size: 1rem;
+    text-align: justify;
     margin: 8px 24px 0px 24px;
     color: var(--cor0);
 }
 
-@media (max-width: 600px) {
+.inf-me a, .a {
+    color: var(--cor4);
+    font-weight: bold;
+}
 
-    /* Scrol bar personanization */
+.inf-me a:hover {
+    font-size: 1.02rem;
+}
 
-    .menu::-webkit-scrollbar {
-        width: 4px;
-    }
-    
-    .menu::-webkit-scrollbar-track {
-        background: var(--cor4);
-    }
-    
-    .menu::-webkit-scrollbar-thumb {
-        background-color: transparent;
-        border-radius: 24px;
-        border: 1px double var(--cor0);
-    }
+.projects {
+    width: calc(100% - 48px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0px 24px 48px 24px;
+    gap: 16px;
+    color: var(--cor0);
+}
 
-    /* Scrol bar personanization */
+.projects .iframe {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
 
-    .menu {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 0px;
-        position: absolute;
-        background-color: var(--cor4);
-        top: 60px;
-        right: 0px;
-        margin: 0px;
-        z-index: 1000;
-        transition: .6s;
-        visibility: hidden;
-        overflow-y: hidden;
-    }
-
-    .menu-responcive {
-        display: flex;
-    }
-
-    .menu-nav.open .menu {
-        display: flex;
-        height: calc(100vh - 60px);
-        flex-direction: column;
-        visibility: visible;
-        overflow-y: auto;
-    }
-
-    .menu-nav.open .menu a {
-        padding: 8px 24px 24px 24px;
-    }
-
-    .menu-nav.open .menu-responcive .line1{
-        transform: rotate(135deg);
-        top: 8px;
-    }
-
-    .menu-nav.open .menu-responcive .line2{
-        display: none;
-    }
-
-    .menu-nav.open .menu-responcive .line3{
-        transform: rotate(-135deg);
-    }
-
-    .brave-me{
-        width: 447px;
-    }
+.projects .iframe iframe {
+    width: calc(50% - 16px);
+    height: 500px;
+    border: none;
 }
